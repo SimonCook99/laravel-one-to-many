@@ -36,9 +36,9 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) //aggiunta di un nuovo post, e controllo degli attributi inseriti (soprattutto la category_id)
     {
-        //
+        
     }
 
     /**
