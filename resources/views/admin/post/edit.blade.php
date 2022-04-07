@@ -4,9 +4,9 @@
 @section("content")
 
     <div class="container">
-      <h1>Crea un nuovo post</h1>
+      <h1>Modifica post</h1>
 
-      <form method="POST" action="{{route("admin.posts.store")}}">
+      <form method="POST" action="{{route("admin.posts.update")}}">
         @csrf
         <div class="form-group">
           <label for="title">Titolo post</label>
@@ -25,12 +25,12 @@
             <option value="">Nessuna categoria</option>
 
             @foreach ($categories as $category)
-              <option value="{{$category->id}}">{{$category->name}}</option>
+              <option {{(old("category_id", $post->category_id) == $category->id) ? 'selected' : '' }} value="{{$category->id}}">{{$category->name}}</option>
             @endforeach
+
         </div>
         
-        
-        <button type="submit" class="btn btn-primary">Aggiungi post</button>
+        <button type="submit" class="btn btn-primary">Salva Modifiche</button>
       </form>
 
     </div>

@@ -26,6 +26,20 @@
                         <td>{{$post->title}}</td>
                         <td>{{substr($post->content, 0, 30)}}</td>
                         <td>{{$post->slug}}</td>
+
+                        <td>
+                          <a href="{{route("admin.posts.show")}}">Vedi dettagli post</a>
+
+                          <a href="{{route("admin.posts.edit")}}">Modfica post</a>
+
+                          <form method="POST" action="{{route("admin.posts.destroy")}}">
+                            @csrf
+                            @method("DELETE")
+
+                            <button class="btn btn-danger" type="submit">Elimina post</button>
+
+                          </form>
+                        </td>
                     </tr>
                 @endforeach
               
