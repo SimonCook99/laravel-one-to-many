@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -80,7 +81,7 @@ class PostController extends Controller
      */
     public function show(Post $post) //Post con l'id specifico come parametro
     {
-        return view("admin.posts.show", compact("post"));
+        return view("admin.post.show", compact("post"));
     }
 
     /**

@@ -28,11 +28,11 @@
                         <td>{{$post->slug}}</td>
 
                         <td>
-                          <a href="{{route("admin.posts.show")}}">Vedi dettagli post</a>
+                          <a href="{{route("admin.posts.show", $post->id)}}">Vedi dettagli post</a>
 
-                          <a href="{{route("admin.posts.edit")}}">Modfica post</a>
+                          <a href="{{route("admin.posts.edit", $post->id)}}">Modfica post</a>
 
-                          <form method="POST" action="{{route("admin.posts.destroy")}}">
+                          <form method="POST" action="{{route("admin.posts.destroy", $post->id)}}">
                             @csrf
                             @method("DELETE")
 

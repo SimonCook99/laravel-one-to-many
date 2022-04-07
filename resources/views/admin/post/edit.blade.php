@@ -6,7 +6,7 @@
     <div class="container">
       <h1>Modifica post</h1>
 
-      <form method="POST" action="{{route("admin.posts.update")}}">
+      <form method="POST" action="{{route("admin.posts.update", $post->id)}}">
         @csrf
         <div class="form-group">
           <label for="title">Titolo post</label>
@@ -27,7 +27,7 @@
             @foreach ($categories as $category)
               <option {{(old("category_id", $post->category_id) == $category->id) ? 'selected' : '' }} value="{{$category->id}}">{{$category->name}}</option>
             @endforeach
-
+          </select>
         </div>
         
         <button type="submit" class="btn btn-primary">Salva Modifiche</button>
